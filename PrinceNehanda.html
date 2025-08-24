@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prince Nehanda — Versatile Handyman & ICT Technician</title>
+  <meta name="description" content="Prince Nehanda — versatile handyman and ICT technician in Fourways, Johannesburg. Smart home, networking, garage doors, instrumentation, light electrical, data recovery, tutoring. Reliable, detail-oriented, safety-focused." />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Prince Nehanda — Versatile Handyman & ICT Technician" />
+  <meta property="og:description" content="Smart home, networking, garage doors, instrumentation, light electrical, data recovery, tutoring — Fourways/Johannesburg." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    /* ===== Color Palette ===== */
+    :root{
+      --primary-red:#d20019;
+      --primary-blue:#002d62;
+      --light-blue:#e6f0ff;
+      --dark-grey:#333;
+      --mid-grey:#555;
+      --light-grey:#f4f4f4;
+      --white:#fff;
+      --accent:#02b39b;
+      --gold:#f2b01e;
+    }
+
+    /* ===== Reset & Base ===== */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      color:var(--dark-grey);
+      background:#fafbff;
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin:0 auto}
+
+    /* ===== Header / Nav ===== */
+    .header{
+      position:sticky;top:0;z-index:1000;
+      backdrop-filter:blur(12px);
+      background:rgba(230,240,255,0.85);
+      box-shadow:0 2px 5px rgba(0,0,0,.08);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:.6rem .4rem;
+    }
+    .logo{
+      display:flex;gap:.6rem;align-items:center;font-weight:700;
+      color:var(--primary-blue);
+    }
+    .logo .mark{
+      width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-red));
+      display:grid;place-items:center;color:#fff;font-size:18px;font-weight:800;
+      box-shadow:0 6px 16px rgba(0,0,0,.15)
+    }
+    .logo .text{letter-spacing:.3px}
+    .nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .nav a{padding:.35rem .6rem;border-radius:8px}
+    .nav a:hover{background:rgba(0,0,0,.05)}
+
+    /* ===== Hero ===== */
+    .hero{
+      padding:72px 0 36px;background:radial-gradient(1200px 500px at 20% -10%, var(--light-blue), transparent);
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;
+    }
+    .badge{
+      display:inline-flex;gap:.5rem;align-items:center;
+      background:#fff;border:1px solid #e8eef9;border-radius:999px;padding:.35rem .7rem;font-size:.9rem;
+      box-shadow:0 4px 12px rgba(0,0,0,.06)
+    }
+    .hero h1{font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.15;margin:.6rem 0;color:var(--primary-blue)}
+    .hero p{font-size:1.05rem;color:#3d4b66}
+    .cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{
+      display:inline-flex;align-items:center;gap:.55rem;border:none;cursor:pointer;
+      padding:.8rem 1rem;border-radius:12px;font-weight:700
+    }
+    .btn-primary{background:var(--primary-blue);color:#fff}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:#fff;border:1px solid #dbe6ff}
+    .hero-card{
+      background:#fff;border:1px solid #e8eef9;border-radius:16px;padding:1rem;
+      box-shadow:0 12px 24px rgba(0,0,0,.06)
+    }
+    .check{color:var(--accent);font-weight:700;margin-right:.35rem}
+
+    /* ===== Sections ===== */
+    section{padding:44px 0}
+    .section-title{
+      font-size:1.6rem;color:var(--primary-blue);margin:0 0 .8rem 0
+    }
+    .muted{color:#51607a}
+
+    /* ===== Services ===== */
+    .cards{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1rem
+    }
+    .card{
+      background:#fff;border:1px solid #e8eef9;border-radius:16px;padding:1rem;
+      box-shadow:0 10px 20px rgba(0,0,0,.05)
+    }
+    .card h3{margin:.2rem 0 .4rem 0}
+    .tag{
+      display:inline-block;margin:.25rem .25rem 0 0;padding:.25rem .5rem;border-radius:999px;
+      background:#f1f5ff;border:1px dashed #c9d7ff;font-size:.82rem
+    }
+
+    /* ===== Skills ===== */
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .skill{
+      background:#fff;border:1px solid #e8eef9;border-radius:12px;padding:.7rem .8rem
+    }
+
+    /* ===== Projects ===== */
+    .project{
+      display:grid;grid-template-columns:1fr 2fr;gap:1rem;
+      background:#fff;border:1px solid #e8eef9;border-radius:16px;padding:1rem;margin-bottom:1rem
+    }
+    .project h4{margin:.1rem 0}
+    .pill{display:inline-block;background:#f4f7ff;border:1px solid #dbe6ff;border-radius:999px;padding:.2rem .55rem;font-size:.8rem;margin-right:.25rem}
+
+    /* ===== Credentials ===== */
+    .cred{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1rem
+    }
+    .cred .item{
+      background:#fff;border:1px solid #e8eef9;border-radius:12px;padding:1rem
+    }
+    .item .title{font-weight:700}
+    .star{color:var(--gold)}
+
+    /* ===== Testimonials ===== */
+    .testi{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1rem
+    }
+    .quote{
+      background:#fff;border:1px solid #e8eef9;border-radius:16px;padding:1rem
+    }
+    .quote .who{font-weight:700;margin-top:.5rem}
+
+    /* ===== Contact / Footer ===== */
+    .contact{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:1rem
+    }
+    form{
+      background:#fff;border:1px solid #e8eef9;border-radius:16px;padding:1rem;
+    }
+    label{display:block;font-weight:600;margin:.6rem 0 .25rem}
+    input,textarea{
+      width:100%;border:1px solid #dbe6ff;border-radius:10px;padding:.7rem;background:#fbfdff
+    }
+    textarea{min-height:120px;resize:vertical}
+    .contact-card{
+      background:linear-gradient(135deg,#ffffff, #f6f9ff);
+      border:1px solid #e8eef9;border-radius:16px;padding:1rem
+    }
+    .contact-list{list-style:none;padding:0;margin:0}
+    .contact-list li{margin:.4rem 0}
+    .footer{
+      text-align:center;color:#6a7c99;padding:24px 0;border-top:1px solid #e8eef9;margin-top:28px
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .skills{grid-template-columns:repeat(3,1fr)}
+      .project{grid-template-columns:1fr}
+      .cred{grid-template-columns:repeat(2,1fr)}
+      .testi{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width: 620px){
+      .cards,.skills,.cred,.testi{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Prince Nehanda",
+    "jobTitle":"Handyman & ICT Technician",
+    "description":"Versatile handyman and ICT technician in Fourways, Johannesburg — smart home, garage doors, networking, instrumentation, light electrical, data recovery, tutoring.",
+    "address":{"@type":"PostalAddress","addressLocality":"Fourways","addressRegion":"Gauteng","addressCountry":"ZA"},
+    "alumniOf":[{"@type":"CollegeOrUniversity","name":"National University of Science and Technology (NUST), Bulawayo"},
+                {"@type":"CollegeOrUniversity","name":"City & Guilds of London"}],
+    "url":"https://example.com",
+    "sameAs": ["https://www.linkedin.com/in/your-handle","https://github.com/your-handle"]
+  }
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav container">
+    <a href="#top" class="logo" aria-label="Home">
+      <span class="mark">PN</span>
+      <span class="text">Prince Nehanda</span>
+    </a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact" class="btn btn-primary">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">📍 Fourways, Johannesburg • Available Mon–Sat</span>
+        <h1>Proficient & Versatile Handyman • ICT Technician • Problem-Solver</h1>
+        <p>
+          I help families and small businesses with <strong>smart home setups</strong>, <strong>garage door systems</strong>,
+          <strong>Wi-Fi & mesh networking</strong>, <strong>light electrical fixes</strong>, and <strong>instrumentation</strong> tasks — done safely, neatly, and on time.
+          Detail-focused, customer-friendly, and ready to help.
+        </p>
+        <div class="cta-row">
+          <a href="#contact" class="btn btn-primary">Book a Visit</a>
+          <a href="#projects" class="btn btn-ghost">See Recent Work</a>
+        </div>
+        <div style="margin-top:1rem">
+          <span class="check">✓</span>Insured mindset & safety-first
+          <span class="check">✓</span>Clear quotes
+          <span class="check">✓</span>After-service support
+        </div>
+      </div>
+      <div class="hero-card">
+        <strong>Popular Requests This Month</strong>
+        <ul>
+          <li>🔌 Garage door backup battery & smart switch (Centurion XTRAC)</li>
+          <li>📶 Whole-home Wi-Fi mesh (outdoor-rated for large yards)</li>
+          <li>💡 Smart lighting & voice assistant setup (Alexa/Google)</li>
+          <li>🚰 Irrigation solenoid troubleshooting & low-voltage wiring</li>
+          <li>🛡️ Basic data recovery & device setup</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="muted">Solid technical hands, tidy finishes, honest communication.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Smart Home & Garage Doors</h3>
+          <p>Centurion XTRAC maintenance, battery upgrades, smart relays/switches, remote access, safety checks.</p>
+          <span class="tag">Centurion Systems</span>
+          <span class="tag">12–24V DC</span>
+          <span class="tag">Home automation</span>
+        </div>
+        <div class="card">
+          <h3>Wi-Fi & Networking</h3>
+          <p>Whole-home and campus-style mesh design, outdoor APs, security, cabling tidy-ups, router/firewall basics.</p>
+          <span class="tag">Mesh Wi-Fi</span>
+          <span class="tag">Ethernet</span>
+          <span class="tag">Cybersecurity basics</span>
+        </div>
+        <div class="card">
+          <h3>Light Electrical & Low Voltage</h3>
+          <p>Low-voltage wiring, irrigation solenoids, fault finding, neat trunking, fixture swaps (within compliance).</p>
+          <span class="tag">LV wiring</span>
+          <span class="tag">Irrigation</span>
+          <span class="tag">Safety first</span>
+        </div>
+        <div class="card">
+          <h3>Instrumentation & Control</h3>
+          <p>Sensor installation, calibration assistance, basic panel wiring, documentation and maintenance support.</p>
+          <span class="tag">Applied Physics</span>
+          <span class="tag">I&C</span>
+        </div>
+        <div class="card">
+          <h3>Repairs & Setup</h3>
+          <p>Small device repairs, PS5 controller diagnostics, phone/PC setup, data backup and recovery basics.</p>
+          <span class="tag">Troubleshooting</span>
+          <span class="tag">Diagnostics</span>
+        </div>
+        <div class="card">
+          <h3>Web & Tutoring</h3>
+          <p>Simple websites and content updates; Life Sciences & Physical Science tutoring (interactive and practical).</p>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">STEM tutoring</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Core Strengths</h2>
+      <div class="skills">
+        <div class="skill">✅ Problem diagnosis & fault finding</div>
+        <div class="skill">✅ Neat wiring & labeling</div>
+        <div class="skill">✅ Mesh Wi-Fi planning (indoor/outdoor)</div>
+        <div class="skill">✅ Smart relays, sensors, automation</div>
+        <div class="skill">✅ Garage door DC power systems</div>
+        <div class="skill">✅ Documentation & user training</div>
+        <div class="skill">✅ Client communication & reliability</div>
+        <div class="skill">✅ Safety & compliance mindset</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Selected Work</h2>
+
+      <article class="project">
+        <div>
+          <strong>Smart Garage Upgrade</strong>
+          <div class="muted">Fourways • Residential</div>
+        </div>
+        <div>
+          <h4>Centurion XTRAC: Battery & Smart Opening</h4>
+          <p>Assessed dual 12V 1.3Ah battery pack and advised safe capacity options; explored 24V Li-ion upgrade approach, and integrated a locally available smart switch for remote open/close with safety interlocks.</p>
+          <div>
+            <span class="pill">Centurion XTRAC</span>
+            <span class="pill">12–24V DC</span>
+            <span class="pill">Smart relay</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <strong>Outdoor Mesh Wi-Fi</strong>
+          <div class="muted">Campus-style • SME</div>
+        </div>
+        <div>
+          <h4>High-quality Outdoor Mesh</h4>
+          <p>Specified weather-rated APs and mounting, channel planning, and backhaul choices. Documented layout and after-installation checks for stable coverage.</p>
+          <div>
+            <span class="pill">Outdoor APs</span>
+            <span class="pill">Mesh</span>
+            <span class="pill">Security</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <strong>Irrigation Solenoid Fix</strong>
+          <div class="muted">Residential • Garden</div>
+        </div>
+        <div>
+          <h4>Low-Voltage Valve Troubleshooting</h4>
+          <p>Diagnosed non-responsive zones, verified coil resistance, traced wiring, replaced faulty connectors, and tested controller timing with clean terminations.</p>
+          <div>
+            <span class="pill">24VAC</span>
+            <span class="pill">Multimeter</span>
+            <span class="pill">Weatherproofing</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <strong>Ministry Website Support</strong>
+          <div class="muted">Greater Glory Ministries</div>
+        </div>
+        <div>
+          <h4>UI/UX Polish & Components</h4>
+          <p>Refined navigation, clickable cards, flip components, and accessibility; consolidated CSS and improved responsiveness for mobile users.</p>
+          <div>
+            <span class="pill">HTML/CSS</span>
+            <span class="pill">Accessibility</span>
+            <span class="pill">Responsive design</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <strong>Device & Data Help</strong>
+          <div class="muted">Various Clients</div>
+        </div>
+        <div>
+          <h4>Small Repairs & Recoveries</h4>
+          <p>Controller button diagnostics, phone/account recovery guidance, and basic data recovery; focused on clear communication and safe best practices.</p>
+          <div>
+            <span class="pill">Diagnostics</span>
+            <span class="pill">Data backup</span>
+            <span class="pill">Customer training</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Credentials ===== -->
+  <section id="credentials">
+    <div class="container">
+      <h2 class="section-title">Experience & Credentials</h2>
+      <div class="cred">
+        <div class="item">
+          <div class="title">Zarepath Technologies — Freelance ICT Officer</div>
+          <div class="muted">Aug 2023 – Present</div>
+          <p>Network configuration, cybersecurity basics, systems maintenance, training (Power BI, SQL, Python), remote support.</p>
+        </div>
+        <div class="item">
+          <div class="title">Paeflow Metering — Lead I&C Technician</div>
+          <div class="muted">Harare • until Jul 2023</div>
+          <p>Instrumentation & control, sensor installs, maintenance, documentation; team coordination and client handovers.</p>
+        </div>
+        <div class="item">
+          <div class="title">Applied Physics & Fuel Handling</div>
+          <div class="muted">Service Station Pumps</div>
+          <p>Background in fuel handling equipment, service station pump systems, and practical technical troubleshooting.</p>
+        </div>
+
+        <div class="item">
+          <div class="title">Education</div>
+          <p>🎓 BSc (Hons) Applied Physics — NUST, Bulawayo (Jun 2008)<br/>
+             🎓 Advanced Diploma — Telecommunications Technology (City & Guilds of London)</p>
+        </div>
+        <div class="item">
+          <div class="title">Certificates</div>
+          <p>Belden Industrial Ethernet • Fortinet NSE (Operator Certificate in Cybersecurity)</p>
+        </div>
+        <div class="item">
+          <div class="title">Community & Tutoring</div>
+          <p>Life Sciences & Physical Science tutoring; interactive lessons and learner-friendly science demos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Client Feedback</h2>
+      <div class="testi">
+        <div class="quote">
+          <p>“Professional and tidy. Our garage door now works from our phones and the wiring looks great.”</p>
+          <div class="who">— Homeowner, Fourways <span class="star">★★★★★</span></div>
+        </div>
+        <div class="quote">
+          <p>“Set up Wi-Fi across our property. Clear guidance and after-support we could understand.”</p>
+          <div class="who">— SME Owner, Bryanston <span class="star">★★★★★</span></div>
+        </div>
+        <div class="quote">
+          <p>“Quick diagnosis on irrigation valves — saved us time and water.”</p>
+          <div class="who">— Facilities, Lonehill <span class="star">★★★★★</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get a Quote</h2>
+      <div class="contact">
+        <form onsubmit="event.preventDefault(); alert('Thanks, Prince will get back to you shortly.');">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" placeholder="e.g., T. Moyo" required/>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required/>
+          <label for="msg">What do you need help with?</label>
+          <textarea id="msg" name="message" placeholder="Tell me about your project..."></textarea>
+          <div style="display:flex;gap:.6rem;margin-top:.8rem">
+            <button class="btn btn-primary" type="submit">Send</button>
+            <a class="btn btn-ghost" href="Prince-Nehanda-CV.pdf" download>Download CV (PDF)</a>
+          </div>
+        </form>
+        <div class="contact-card">
+          <h3>Contact Info</h3>
+          <ul class="contact-list">
+            <li>📍 Fourways, Johannesburg</li>
+            <li>📞 <a href="tel:+27-000-000-0000">+27 00 000 0000</a></li>
+            <li>✉️ <a href="mailto:hello@yourdomain.co.za">hello@yourdomain.co.za</a></li>
+            <li>🔗 <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a> •
+                <a href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub</a></li>
+            <li>🕒 Mon–Sat, 08:00–18:00</li>
+          </ul>
+          <p class="muted" style="margin-top:.6rem">
+            <strong>Service area:</strong> Fourways, Bryanston, Lonehill, Sandton and surrounds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="yr"></span> Prince Nehanda • Reliable • Detail-Oriented • Safety-First
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
